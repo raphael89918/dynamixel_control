@@ -1,0 +1,5 @@
+add_executable(arm_node src/arm/arm.cpp)
+add_executable(trunk_node src/trunk/trunk.cpp)
+add_executable(control_node src/control/control.cpp)
+add_executable(laser_control_node src/laser_control/laser_control.cpp)
+add_executable(camera_control_node src/camera_control/camera_control.cpp)
