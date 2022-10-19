@@ -17,7 +17,7 @@ Laser::~Laser()
 void Laser::init()
 {
 
-    laser_sub = nh_.subscribe("/laser/wheel", 1, &Laser::laser_callback, this);
+    laser_sub = nh_.subscribe("/dynamixel/wheel_laser", 1, &Laser::laser_callback, this);
     endposition();
 }
 
@@ -25,11 +25,11 @@ void Laser::laser_callback(const dynamixel_control::wheel_laser &msg)
 {
     if(msg.ctrl==1)
     {
-        runposition();
+        runposition();      //laser 支架展開
     }
     if(msg.ctrl==0)
     {
-        endposition();
+        endposition();      //laser 支架收起
     }
 }
 

@@ -19,47 +19,48 @@ Move::~Move()
 }
 
 
-void Move::setposition() //t初始位置
+void Move::setposition() //初始位置
 {
-    position1 = 165;
-    motor1.setServoState(ON);
-    motor1.setSpeed(10);
-    motor1.setPosition(position1);
-    cout << "motor1 angle:" << position1 << endl;
-    motor1.setServoState(OFF);
+    position5 = 219;
+    motor5.setServoState(ON);
+    motor5.setSpeed(30);
+    motor5.setPosition(position5);
+    cout << "motor5 angle:" << position5 << endl;
+    //motor1.setServoState(OFF);
 
-    motor1.waitForIdle();
+    motor5.waitForIdle();
 
-    position2 = 155;
-    motor2.setServoState(ON);
-    motor2.setSpeed(10);
-    motor2.setPosition(position2);
-    motor2.waitForIdle();
-    cout << "motor2 angle:" << position2 << endl;
-    motor2.setServoState(OFF);
-
-    position3 = 150;
-    motor3.setServoState(ON);
-    motor3.setSpeed(10);
-    motor3.setPosition(position3);
-    cout << "motor3 angle:" << position3 << endl;
-    motor3.setServoState(OFF);
-
-   position4 = 150;
+    position4 = 149;
     motor4.setServoState(ON);
-    motor4.setSpeed(10);
+    motor4.setSpeed(30);
     motor4.setPosition(position4);
-    motor4.waitForIdle();
+    //motor4.waitForIdle();
     cout << "motor4 angle:" << position4 << endl;
+    //motor2.setServoState(OFF);
+
+    position3 = 152;
+    motor3.setServoState(ON);
+    motor3.setSpeed(30);
+    motor3.setPosition(position3);
+    motor3.waitForIdle();
+    cout << "motor3 angle:" << position3 << endl;
+    //motor3.setServoState(OFF);
+
+   position2 = 139;
+    motor2.setServoState(ON);
+    motor2.setSpeed(30);
+    motor2.setPosition(position2);
+    //motor2.waitForIdle();
+    cout << "motor2 angle:" << position2 << endl;
     motor4.setServoState(OFF);
 
-    position5 = 220;
-    motor5.setServoState(ON);
-    motor5.setSpeed(10);
-    motor5.setPosition(position5);
-    motor5.waitForIdle();
-    cout << "motor5 angle:" << position5 << endl;
-    motor5.setServoState(OFF);
+    position1 = 166;
+    motor1.setServoState(ON);
+    motor1.setSpeed(30);
+    motor1.setPosition(position1);
+    motor1.waitForIdle();
+    cout << "motor1 angle:" << position1 << endl;
+    //motor5.setServoState(OFF);
 
     position6 = 140;
     motor6.setServoState(ON);

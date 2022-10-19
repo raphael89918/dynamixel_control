@@ -76,6 +76,7 @@ add_message_files(
     wheel_laser.msg
     arm_trunk.msg
     test.msg
+    camera_angle.msg
 )
 
 ## Generate services in the 'srv' folder

@@ -5,16 +5,19 @@
 #include <string>
 #include <ros/ros.h>
 #include "dynamixel.h"
+#include "dynamixel_control/camera_angle.h"
 using namespace std;
 
 class Camera
 {
     public:
-        void run();
+        void init();
         Camera(ros::NodeHandle &nh);
         ~Camera();
     private:
         ros::NodeHandle nh_;
+        ros::Subscriber camera_angle_sub;
+        void camera_callback(const dynamixel_control::camera_angle &msg);
         Motor motor15;
         int position15;
         string port;
