@@ -75,7 +75,6 @@ add_message_files(
     FILES
     wheel_laser.msg
     arm_trunk.msg
-    test.msg
     camera_angle.msg
 )
 
