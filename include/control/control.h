@@ -7,6 +7,7 @@
 #include "dynamixel.h"
 #include "arm/arm.h"
 #include "trunk/trunk.h"
+#include "laser_control/laser_control.h"
 
 using namespace std;
 
@@ -16,9 +17,7 @@ class Control
 
         Control(ros::NodeHandle &nh);
         ~Control();
-        Move move(ros::NodeHandle &nh);
-        Storage storage(ros::NodeHandle &nh);
-        void run();
+        
 
     private:
         ros::NodeHandle nh_;

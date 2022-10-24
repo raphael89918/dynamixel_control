@@ -15,6 +15,7 @@ ${catkin_LIBRARIES}
 
 target_link_libraries(control_node
 control_lib
+laser_control_lib
 arm_lib
 trunk_lib
 dynamixel_lib

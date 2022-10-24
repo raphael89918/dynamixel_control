@@ -5,7 +5,17 @@ int main(int argc,char** argv)
     ros::init(argc,argv,"control_part");
     ros::NodeHandle nh;
     Control control(nh);
-    control.run();
+    Storage storage(nh);
+    Laser laser(nh);
+    Move move(nh);
+    storage.init();
+    laser.init();
+    while(ros::ok())
+    {
+        ros::Rate loop_rate(10);
+        ros::spinOnce();
+        loop_rate.sleep();
+    }
     return 0;
 }
 
