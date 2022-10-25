@@ -18,7 +18,7 @@ void Camera::init()
     motor15.setServoState(ON);
     motor15.setSpeed(10);
     motor15.setPosition(position15);
-    cout << "motor15 angle:" << position15 << endl;
+  //  cout << "motor15 angle:" << position15 << endl;
     camera_angle_sub = nh_.subscribe("/dynamixel/camera_angle",1,&Camera::camera_callback,this);
 }
 
@@ -37,6 +37,6 @@ void Camera::camera_callback(const dynamixel_control::camera_angle &msg)
     }
 
     motor15.setPosition(position15);
-    cout << "motor15 angle:" << position15 << endl;
+  //  cout << "motor15 angle:" << position15 << endl;
     motor15.setServoState(OFF);
 }

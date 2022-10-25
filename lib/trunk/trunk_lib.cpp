@@ -75,7 +75,7 @@ void Storage::startposition()
     motor3.setServoState(ON);
     motor3.setSpeed(10);
     motor3.setPosition(position3);
-    cout << "motor3 angle:" << position3 << endl;
+   // cout << "motor3 angle:" << position3 << endl;
     motor3.waitForIdle();
 }
 
@@ -92,37 +92,37 @@ void Storage::setposition() //木板傾斜
     motor1.setServoState(ON);
     motor1.setSpeed(30);
     motor1.setPosition(position1);
-    cout << "motor1 angle:" << position1 << endl;
+    //cout << "motor1 angle:" << position1 << endl;
 
     position6 = 66;
     motor6.setServoState(ON);
     motor6.setSpeed(30);
     motor6.setPosition(position6);
-    cout << "motor6 angle:" << position6 << endl;
+   // cout << "motor6 angle:" << position6 << endl;
 
     position2 = 123;
     motor2.setServoState(ON);
     motor2.setSpeed(30);
     motor2.setPosition(position2);
-    cout << "motor2 angle:" << position2 << endl;
+   // cout << "motor2 angle:" << position2 << endl;
 
     position5 = 333;
     motor5.setServoState(ON);
     motor5.setSpeed(30);
     motor5.setPosition(position5);
-    cout << "motor5 angle:" << position5 << endl;
+   // cout << "motor5 angle:" << position5 << endl;
 
     position3 = 140;
     motor3.setServoState(ON);
     motor3.setSpeed(30);
     motor3.setPosition(position3);
-    cout << "motor3 angle:" << position3 << endl;
+    //cout << "motor3 angle:" << position3 << endl;
 
     position4 = 149;
     motor4.setServoState(ON);
     motor4.setSpeed(30);
     motor4.setPosition(position4);
-    cout << "motor4 angle:" << position4 << endl;
+    //cout << "motor4 angle:" << position4 << endl;
 
     /*  motor1.setServoState(OFF);
         motor2.setServoState(OFF);
@@ -144,37 +144,37 @@ void Storage::oriposition()
     position4 = 159;
     motor4.setSpeed(10);
     motor4.setPosition(position4);
-    cout << "motor4 angle:" << position4 << endl;
+  //  cout << "motor4 angle:" << position4 << endl;
     motor4.waitForIdle();
 
     position3 = 250;
     motor3.setSpeed(10);
     motor3.setPosition(position3);
-    cout << "motor3 angle:" << position3 << endl;
+  //  cout << "motor3 angle:" << position3 << endl;
     motor3.waitForIdle();
 
     position2 = 91;
     motor2.setSpeed(50);
     motor2.setPosition(position2);
-    cout << "motor2 angle:" << position2 << endl;
+  //  cout << "motor2 angle:" << position2 << endl;
     //motor2.waitForIdle();
 
     position5 = 303;
     motor5.setSpeed(50);
     motor5.setPosition(position5);
-    cout << "motor5 angle:" << position5 << endl;
+   // cout << "motor5 angle:" << position5 << endl;
     motor5.waitForIdle();
 
     position6 = 50;
     motor6.setSpeed(50);
     motor6.setPosition(position6);
-    cout << "motor6 angle:" << position6 << endl;
+   // cout << "motor6 angle:" << position6 << endl;
     //motor6.waitForIdle();
 
     position1 = 134;
     motor1.setSpeed(50);
     motor1.setPosition(position1);
-    cout << "motor1 angle:" << position1 << endl;
+ //   cout << "motor1 angle:" << position1 << endl;
     motor1.waitForIdle();
 
 
@@ -193,42 +193,42 @@ void Storage::pileposition() //木板積木放置堆疊
     position3 = 240;
     motor3.setSpeed(10);
     motor3.setPosition(position3);
-    cout << "motor3 angle:" << position3 << endl;
+   // cout << "motor3 angle:" << position3 << endl;
     motor3.waitForIdle();
 
     position1 = 252;
     motor1.setSpeed(20);
     motor1.setPosition(position1);
-    cout << "motor1 angle:" << position1 << endl;
+   // cout << "motor1 angle:" << position1 << endl;
 
     position5 = 270;
     motor5.setSpeed(20);
     motor5.setPosition(position5);
-    cout << "motor5 angle:" << position5 << endl;
+  //  cout << "motor5 angle:" << position5 << endl;
 
 
     position2 = 52;
     motor2.setSpeed(20);
     motor2.setPosition(position2);
-    cout << "motor2 angle:" << position2 << endl;
+   // cout << "motor2 angle:" << position2 << endl;
 
     position6 = 171;
     motor6.setSpeed(20);
     motor6.setPosition(position6);
-    cout << "motor6 angle:" << position6 << endl;
+   // cout << "motor6 angle:" << position6 << endl;
 
     ros::Duration(3).sleep();
     position4 = 59;
     motor4.setSpeed(40);
     motor4.setPosition(position4);
-    cout << "motor4 angle:" << position4 << endl;
+   // cout << "motor4 angle:" << position4 << endl;
     motor4.waitForIdle();
 
     ros::Duration(1).sleep();
     position3 = 160;
     motor3.setSpeed(10);
     motor3.setPosition(position3);
-    cout << "motor3 angle:" << position3 << endl;
+   // cout << "motor3 angle:" << position3 << endl;
 
     /*   motor1.setServoState(OFF);
          motor2.setServoState(OFF);

@@ -12,30 +12,6 @@ int main(int argc,char** argv)
         ros::spinOnce();
         loop_rate.sleep();
     }
-
-/*
-    move.setposition();
-    move.gripposition();
-   storage.setposition();
-    ros::Duration(3).sleep();
-    move.gripping();
-    move.backtoposition();
-    ros::Duration(1).sleep();
-
-    move.gripposition();
-    ros::Duration(3).sleep();
-    move.gripping();
-    move.backtoposition();
-    ros::Duration(1).sleep();
-
-    move.gripposition();
-    ros::Duration(3).sleep();
-    move.gripping();
-    move.backtoposition();
-    move.gripposition();
-    storage.pileposition();
-//    move.backtoposition();
-  */
     return 0;
 }
 
