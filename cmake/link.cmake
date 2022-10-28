@@ -18,6 +18,7 @@ control_lib
 laser_control_lib
 arm_lib
 trunk_lib
+camera_control_lib
 dynamixel_lib
 ${DYNAMIXEL_LIBRARIES}
 ${catkin_LIBRARIES}

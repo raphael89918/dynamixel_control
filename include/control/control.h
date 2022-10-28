@@ -7,6 +7,7 @@
 #include "dynamixel.h"
 #include "arm/arm.h"
 #include "trunk/trunk.h"
+#include "camera_control/camera_control.h"
 #include "laser_control/laser_control.h"
 
 using namespace std;

@@ -27,13 +27,33 @@ void Camera::camera_callback(const dynamixel_control::camera_angle &msg)
     //position15 = 120;
     motor15.setServoState(ON);
     motor15.setSpeed(10);
+    if(msg.angle==-3)
+    {
+        position15=90;
+    }
+    if(msg.angle==-2)
+    {
+        position15=100;
+    }
+    if(msg.angle==-1)
+    {
+        position15=110;
+    }
+    if(msg.angle==0)
+    {
+        position15=120;
+    }
     if(msg.angle==1)
     {
-        position15 +=10;
+        position15=130;
     }
     if(msg.angle==2)
     {
-        position15 -=10;
+        position15=140;
+    }
+    if(msg.angle==3)
+    {
+        position15=150;
     }
 
     motor15.setPosition(position15);
