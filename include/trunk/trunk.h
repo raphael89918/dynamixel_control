@@ -7,6 +7,7 @@
 #include "arm/arm.h"
 #include "dynamixel.h"
 #include "dynamixel_control/arm_trunk.h"
+#include "dynamixel_control/action_state.h"
 using namespace std;
 
 class Storage
@@ -23,6 +24,7 @@ class Storage
     private:
         ros::NodeHandle nh_;
         ros::Subscriber arm_trunk_sub;
+        ros::Publisher state_pub;
         void trunk_callback(const dynamixel_control::arm_trunk &msg);
         Motor motor1;
         Motor motor2;
