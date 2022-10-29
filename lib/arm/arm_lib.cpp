@@ -90,15 +90,15 @@ void Move::gripposition() //夾取位置
     motor1.setSpeed(20);
     motor1.setPosition(position1);
     //cout << "motor1 angle:" << position1 << endl;
-    motor1.setServoState(OFF);
+    //motor1.setServoState(OFF);
 
     position2 = 250;
     motor2.setServoState(ON);
     motor2.setSpeed(20);
     motor2.setPosition(position2);
-   // motor2.waitForIdle();
+    motor2.waitForIdle();
     //cout << "motor2 angle:" << position2 << endl;
-    motor2.setServoState(OFF);
+  //  motor2.setServoState(OFF);
 
     position3 = 220;
     motor3.setServoState(ON);
@@ -111,11 +111,11 @@ void Move::gripposition() //夾取位置
     motor4.setServoState(ON);
     motor4.setSpeed(10);
     motor4.setPosition(position4);
-   // motor4.waitForIdle();
+  //  motor4.waitForIdle();
     //cout << "motor4 angle:" << position4 << endl;
    // motor4.setServoState(OFF);
 
-    position5 = 220;
+    position5 = 240;
     motor5.setServoState(ON);
     motor5.setSpeed(10);
     motor5.setPosition(position5);
@@ -157,6 +157,12 @@ void Move::gripping() //夾取動作
    // cout << "motor7 angle:" << position7 << endl;
     motor7.setServoState(OFF);
 */
+
+    position5 = 220;
+    motor5.setServoState(ON);
+    motor5.setSpeed(10);
+    motor5.setPosition(position5);
+    motor5.waitForIdle();
 
     position6 = 2;
     motor6.setServoState(ON);
