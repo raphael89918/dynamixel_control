@@ -102,6 +102,14 @@ void Move::gripposition() //夾取位置
     //cout << "motor2 angle:" << position2 << endl;
    // motor2.setServoState(OFF);
 
+    position5 = 240;
+    motor5.setServoState(ON);
+    motor5.setSpeed(10);
+    motor5.setPosition(position5);
+    motor5.waitForIdle();
+   // cout << "motor5 angle:" << position5 << endl;
+   // motor5.setServoState(OFF);
+
     position3 = 220;
     motor3.setServoState(ON);
     motor3.setSpeed(10);
@@ -117,13 +125,7 @@ void Move::gripposition() //夾取位置
     //cout << "motor4 angle:" << position4 << endl;
    // motor4.setServoState(OFF);
 
-    position5 = 240;
-    motor5.setServoState(ON);
-    motor5.setSpeed(10);
-    motor5.setPosition(position5);
-    motor5.waitForIdle();
-   // cout << "motor5 angle:" << position5 << endl;
-   // motor5.setServoState(OFF);
+    
 
     position6 = 27;
     motor6.setServoState(ON);

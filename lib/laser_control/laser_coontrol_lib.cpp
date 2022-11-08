@@ -55,7 +55,7 @@ void Laser::runposition()   //laser 支架展開
 
 void Laser::endposition()   //laser 支架收起
 {
-    position13 = 73;
+    position13 = 87;
     motor13.setServoState(ON);
     motor13.setSpeed(10);
     motor13.setPosition(position13);
@@ -63,7 +63,7 @@ void Laser::endposition()   //laser 支架收起
     motor13.waitForIdle();
     motor13.setServoState(OFF);
 
-    position14 = 232;
+    position14 = 216;
     motor14.setServoState(ON);
     motor14.setSpeed(10);
     motor14.setPosition(position14);

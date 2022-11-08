@@ -10,7 +10,6 @@ Storage::Storage(ros::NodeHandle &nh)
     , nh_(nh)
 {
     ROS_INFO("\n Storage CLASS CONSTRUCTED\n");
-    state_pub = nh.advertise<dynamixel_control::action_state>("/dynamixel/trunk_state",1);
 }
 
 Storage::~Storage()
@@ -22,22 +21,15 @@ void Storage::init()
 {
     Move move(nh_);
     arm_trunk_sub = nh_.subscribe("/dynamixel/arm_storage",1,&Storage::trunk_callback,this);
-    dynamixel_control::action_state state_msg;
-    state_msg.state = 0;
-    state_pub.publish(state_msg);
+  
     oriposition();
     ros::Duration(1).sleep();
     move.setposition();
-    state_msg.state = 1;
-    state_pub.publish(state_msg);
 
 }
 
 void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
 {
-    dynamixel_control::action_state state_msg;
-    state_msg.state = 0;
-    state_pub.publish(state_msg);
     motor1.setServoState(ON);
     motor2.setServoState(ON);
     motor3.setServoState(ON);
@@ -71,8 +63,6 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
         ros::Duration(1).sleep();
         move.setposition(); //夾爪回初始位置
     }
-    state_msg.state = 1;
-    state_pub.publish(state_msg);
 }
 
 void Storage::startposition()
