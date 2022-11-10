@@ -1,12 +1,12 @@
 #include "trunk/trunk.h"
 
-int main(int argc,char** argv)
+int main(int argc, char **argv)
 {
-    ros::init(argc,argv,"trunk");
+    ros::init(argc, argv, "trunk");
     ros::NodeHandle nh;
     Storage storage(nh);
     storage.init();
-    while(ros::ok())
+    while (ros::ok())
     {
         ros::Rate loop_rate(10);
         ros::spinOnce();
@@ -14,4 +14,3 @@ int main(int argc,char** argv)
     }
     return 0;
 }
-
