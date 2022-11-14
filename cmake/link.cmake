@@ -37,3 +37,11 @@ dynamixel_lib
 ${DYNAMIXEL_LIBRARIES}
 ${catkin_LIBRARIES}
 )
+
+target_link_libraries(udp_trunk_node
+udp_trunk_lib
+arm_lib
+dynamixel_lib
+${DYNAMIXEL_LIBRARIES}
+${catkin_LIBRARIES}
+)
