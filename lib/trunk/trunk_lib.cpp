@@ -56,6 +56,24 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
         ros::Duration(1).sleep();
         move.setposition(); //夾爪回初始位置
     }
+    if (msg.control == 7) //就準備位置
+    {
+        move.only_gripping_pos();
+        ros::Duration(1).sleep();
+        setposition();
+    }
+    if (msg.control == 8) //單純夾取動作
+    {
+        move.only_grip();
+    }
+    if (msg.control == 9) //單純夾取動作
+    {
+        move.only_grip_min();
+    }
+    if (msg.control == 10) //單純放鬆動作
+    {
+        move.grip_relex();
+    }
 }
 
 void Storage::startposition()

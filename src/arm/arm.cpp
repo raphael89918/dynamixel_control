@@ -8,20 +8,7 @@ int main(int argc,char** argv)
     move.setposition();
     move.gripposition();
     ros::Duration(3).sleep();
-    move.gripping();
-    move.backtoposition();
-    ros::Duration(1).sleep();
-
-    move.gripposition();
-    ros::Duration(3).sleep();
-    move.gripping();
-    move.backtoposition();
-    ros::Duration(1).sleep();
-
-    move.gripposition();
-    ros::Duration(3).sleep();
-    move.gripping();
-    move.backtoposition();
+    move.only_grip_min();
     return 0;
 
 }

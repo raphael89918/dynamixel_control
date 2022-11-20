@@ -1,1 +1,1 @@
-int8 control
+int16 control
