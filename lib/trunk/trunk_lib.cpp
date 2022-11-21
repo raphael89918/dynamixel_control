@@ -74,6 +74,14 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     {
         move.grip_relex();
     }
+    if (msg.control == 11) //背面擋板伸起動作
+    {
+        backrise();
+    }
+    if (msg.control == 12) //背面擋板降下動作
+    {
+        backdown();
+    }
 }
 
 void Storage::startposition()
@@ -242,4 +250,24 @@ void Storage::pileposition() //木板積木放置堆疊
          motor3.setServoState(OFF);
          motor4.setServoState(OFF);
          */
+}
+
+void Storage::backrise() //背面擋板伸起
+{
+    motor4.setServoState(ON);
+    position4 = 59;
+    motor4.setSpeed(40);
+    motor4.setPosition(position4);
+    // cout << "motor4 angle:" << position4 << endl;
+    motor4.waitForIdle();
+}
+
+void Storage::backdown() //被面擋板降下
+{
+    motor4.setServoState(ON);
+    position4 = 149;
+    motor4.setSpeed(40);
+    motor4.setPosition(position4);
+    // cout << "motor4 angle:" << position4 << endl;
+    motor4.waitForIdle();
 }

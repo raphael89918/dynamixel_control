@@ -17,6 +17,8 @@ public:
     void init();
     void startposition();
     void setposition();
+    void backrise();
+    void backdown();
     void pileposition();
     Move move(ros::NodeHandle &nh);
     Storage(ros::NodeHandle &nh);

@@ -357,16 +357,16 @@ void Move::grip_relex() //單純放鬆動作
   motor7.waitForIdle();
 }
 
-void Move::only_grip_min() //單純夾取動作
+void Move::only_grip_min() //單純小夾取動作
 {
-  position6 = 144;
+  position6 = 172;
   motor6.setServoState(ON);
   motor6.setSpeed(70);
   motor6.setPosition(position6);
   // cout << "motor6 angle:" << position6 << endl;
 
   // position7 = 152;
-  position7 = 172;
+  position7 = 144;
   motor7.setServoState(ON);
   motor7.setSpeed(70);
   motor7.setPosition(position7);
