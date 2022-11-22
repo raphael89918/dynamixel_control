@@ -66,7 +66,7 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     {
         move.only_grip();
     }
-    if (msg.control == 9) //單純夾取動作
+    if (msg.control == 9) //單純小物件夾取動作
     {
         move.only_grip_min();
     }
