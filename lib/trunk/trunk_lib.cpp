@@ -14,7 +14,7 @@ Storage::~Storage()
 void Storage::init()
 {
     Move move(nh_);
-    arm_trunk_sub = nh_.subscribe("/dynamixel/arm_storage", 1, &Storage::trunk_callback, this);
+    arm_trunk_sub = nh_.subscribe("/dynamixel/arm_storage", 20, &Storage::trunk_callback, this);
 
     oriposition();
     ros::Duration(1).sleep();
