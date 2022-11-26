@@ -1,7 +1,7 @@
 #include "trunk/trunk.h"
 
 Storage::Storage(ros::NodeHandle &nh)
-    : motor1(1, 0, "/dev/trunk"), motor2(1, 1, "/dev/trunk"), motor3(1, 2, "/dev/trunk"), motor4(1, 3, "/dev/trunk"), motor5(2, 4, "/dev/trunk"), motor6(2, 5, "/dev/trunk"), nh_(nh)
+    : m_move(nh), motor1(1, 0, "/dev/trunk"), motor2(1, 1, "/dev/trunk"), motor3(1, 2, "/dev/trunk"), motor4(1, 3, "/dev/trunk"), motor5(2, 4, "/dev/trunk"), motor6(2, 5, "/dev/trunk"), nh_(nh)
 {
     ROS_INFO("\n Storage CLASS CONSTRUCTED\n");
 }
@@ -13,12 +13,11 @@ Storage::~Storage()
 
 void Storage::init()
 {
-    Move move(nh_);
-    arm_trunk_sub = nh_.subscribe("/dynamixel/arm_storage", 20, &Storage::trunk_callback, this);
+    arm_trunk_sub = nh_.subscribe("/dynamixel/arm_storage", 20, &Storage::trunk_callback, this,ros::TransportHints().unreliable().maxDatagramSize(10));
 
     oriposition();
     ros::Duration(1).sleep();
-    move.setposition();
+    m_move.setposition();
 }
 
 void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
@@ -29,22 +28,22 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     motor4.setServoState(ON);
     motor5.setServoState(ON);
     motor6.setServoState(ON);
-    Move move(nh_);
+    ROS_INFO("trunk heard %d",msg.control);
     if (msg.control == 1)
     {
         setposition(); //木板傾斜
     }
     if (msg.control == 2)
     {
-        move.gripping(); //夾取動作
+        m_move.gripping(); //夾取動作
     }
     if (msg.control == 3)
     {
-        move.backtoposition(); //積木放木板
+        m_move.backtoposition(); //積木放木板
     }
     if (msg.control == 4)
     {
-        move.gripposition(); //夾爪放下
+        m_move.gripposition(); //夾爪放下
     }
     if (msg.control == 5)
     {
@@ -54,25 +53,25 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     {
         oriposition(); //擋板回初始位置
         ros::Duration(1).sleep();
-        move.setposition(); //夾爪回初始位置
+        m_move.setposition(); //夾爪回初始位置
     }
     if (msg.control == 7) //就準備位置
     {
-        move.only_gripping_pos();
+        m_move.only_gripping_pos();
         ros::Duration(1).sleep();
         setposition();
     }
     if (msg.control == 8) //單純夾取動作
     {
-        move.only_grip();
+        m_move.only_grip();
     }
     if (msg.control == 9) //單純小物件夾取動作
     {
-        move.only_grip_min();
+        m_move.only_grip_min();
     }
     if (msg.control == 10) //單純放鬆動作
     {
-        move.grip_relex();
+        m_move.grip_relex();
     }
     if (msg.control == 11) //背面擋板伸起動作
     {

@@ -5,7 +5,6 @@
 #include <string>
 #include <ros/ros.h>
 #include "dynamixel.h"
-using namespace std;
 
 class Move
 {
@@ -20,6 +19,7 @@ public:
     void backtoposition();
     void subposition();
     void addposition();
+    Move();
     Move(ros::NodeHandle &nh);
     ~Move();
 
@@ -39,7 +39,7 @@ private:
     int position5;
     int position6;
     int position7;
-    string port;
+    std::string port;
 };
 
 #endif

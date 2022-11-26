@@ -8,8 +8,6 @@
 #include "dynamixel.h"
 #include "dynamixel_control/arm_trunk.h"
 
-using namespace std;
-
 class Storage
 {
 public:
@@ -20,7 +18,6 @@ public:
     void backrise();
     void backdown();
     void pileposition();
-    Move move(ros::NodeHandle &nh);
     Storage(ros::NodeHandle &nh);
     ~Storage();
 
@@ -28,6 +25,7 @@ private:
     ros::NodeHandle nh_;
     ros::Subscriber arm_trunk_sub;
     void trunk_callback(const dynamixel_control::arm_trunk &msg);
+    Move m_move;
     Motor motor1;
     Motor motor2;
     Motor motor3;
@@ -40,7 +38,7 @@ private:
     int position4;
     int position5;
     int position6;
-    string port;
+    std::string port;
 };
 
 #endif

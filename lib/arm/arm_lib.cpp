@@ -1,7 +1,13 @@
 #include "arm/arm.h"
 
+Move::Move()
+  : motor1(1, 6, "/dev/arm"), motor2(1, 7, "/dev/arm"), motor3(1, 8, "/dev/arm"), motor4(1, 9, "/dev/arm"), motor5(1, 10, "/dev/arm"), motor6(2, 11, "/dev/arm"), motor7(2, 12, "/dev/arm")
+{
+  ROS_INFO("Move default");
+}
+
 Move::Move(ros::NodeHandle &nh)
-    : motor1(1, 6, "/dev/arm"), motor2(1, 7, "/dev/arm"), motor3(1, 8, "/dev/arm"), motor4(1, 9, "/dev/arm"), motor5(1, 10, "/dev/arm"), motor6(2, 11, "/dev/arm"), motor7(2, 12, "/dev/arm"), nh_(nh)
+    : nh_(nh), motor1(1, 6, "/dev/arm"), motor2(1, 7, "/dev/arm"), motor3(1, 8, "/dev/arm"), motor4(1, 9, "/dev/arm"), motor5(1, 10, "/dev/arm"), motor6(2, 11, "/dev/arm"), motor7(2, 12, "/dev/arm")
 {
   ROS_INFO("\n MOVE CLASS CONSTRUCTED\n");
 }
@@ -240,7 +246,7 @@ void Move::backtoposition()
   // cout << "motor5 angle:" << position5 << endl;
   motor5.waitForIdle();
 
-  ros::Duration(2).sleep();
+  ros::Duration(1).sleep();
 
   // position6 = 27;
   position6 = 222;
@@ -329,13 +335,13 @@ void Move::only_gripping_pos() //夾取位置沒夾取動作
 
 void Move::only_grip() //單純夾取動作
 {
-  position6 = 187;
+  position6 = 180;
   motor6.setServoState(ON);
   motor6.setSpeed(70);
   motor6.setPosition(position6);
   // cout << "motor6 angle:" << position6 << endl;
 
-  position7 = 132;
+  position7 = 139;
   motor7.setServoState(ON);
   motor7.setSpeed(70);
   motor7.setPosition(position7);
