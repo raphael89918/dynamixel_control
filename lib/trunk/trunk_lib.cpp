@@ -58,7 +58,7 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     if (msg.control == 7) //就準備位置
     {
         m_move.only_gripping_pos();
-        ros::Duration(1).sleep();
+        //ros::Duration(1).sleep();
         setposition();
     }
     if (msg.control == 8) //單純夾取動作
@@ -80,6 +80,36 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     if (msg.control == 12) //背面擋板降下動作
     {
         backdown();
+    }
+    if (msg.control == 13) //背面擋板降下動作
+    {
+        m_move.type2_gripping_pos();
+        //ros::Duration(1).sleep();
+        setposition();
+    }
+    if (msg.control == 14) //地3軸夾爪向上轉動
+    {
+        m_move.thir_addposition();
+    }
+    if (msg.control == 15) //地3軸夾爪向下轉動
+    {
+        m_move.thir_subposition();
+    }
+    if (msg.control == 16) //地2軸夾爪向上轉動
+    {
+        m_move.sec_addposition();
+    }
+    if (msg.control == 17) //地2軸夾爪向下轉動
+    {
+        m_move.sec_subposition();
+    }
+    if (msg.control == 18) //地1軸夾爪向上轉動
+    {
+        m_move.fir_addposition();
+    }
+    if (msg.control == 19) //地1軸夾爪向下轉動
+    {
+        m_move.fir_subposition();
     }
 }
 
