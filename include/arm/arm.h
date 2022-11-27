@@ -24,6 +24,8 @@ public:
     void sec_addposition();
     void thir_subposition();
     void thir_addposition();
+    void fir_sec_subposition();
+    void fir_sec_addposition();
     Move();
     Move(ros::NodeHandle &nh);
     ~Move();

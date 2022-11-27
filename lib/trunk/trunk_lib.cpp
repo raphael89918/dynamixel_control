@@ -81,7 +81,7 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     {
         backdown();
     }
-    if (msg.control == 13) //背面擋板降下動作
+    if (msg.control == 13) //type2動作
     {
         m_move.type2_gripping_pos();
         //ros::Duration(1).sleep();
@@ -110,6 +110,14 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     if (msg.control == 19) //地1軸夾爪向下轉動
     {
         m_move.fir_subposition();
+    }
+    if (msg.control == 20) //地1軸夾爪向上轉動
+    {
+        m_move.fir_sec_addposition();
+    }
+    if (msg.control == 21) //地1軸夾爪向下轉動
+    {
+        m_move.fir_sec_subposition();
     }
 }
 

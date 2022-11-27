@@ -350,6 +350,48 @@ void Move::thir_addposition() //地3軸夾爪向上轉動
   motor5.setPosition(position5);
 }
 
+void Move::fir_sec_subposition() //地1,2軸夾爪向下轉動
+{
+  motor1.setServoState(ON);
+  motor2.setServoState(ON);
+  motor3.setServoState(ON);
+  motor4.setServoState(ON);
+  motor5.setServoState(ON);
+  position3 = position3 + 10;
+  motor3.setSpeed(10);
+  motor3.setPosition(position3);
+  position4 = position4 - 10;
+  motor4.setSpeed(10);
+  motor4.setPosition(position4);
+  position1 = position1 - 10;
+  motor1.setSpeed(10);
+  motor1.setPosition(position1);
+  position2 = position2 + 10;
+  motor2.setSpeed(10);
+  motor2.setPosition(position2);
+}
+
+void Move::fir_sec_addposition() //地1,2軸夾爪向上轉動
+{
+  motor1.setServoState(ON);
+  motor2.setServoState(ON);
+  motor3.setServoState(ON);
+  motor4.setServoState(ON);
+  motor5.setServoState(ON);
+  position3 = position3 - 10;
+  motor3.setSpeed(10);
+  motor3.setPosition(position3);
+  position4 = position4 + 10;
+  motor4.setSpeed(10);
+  motor4.setPosition(position4);
+  position1 = position1 + 10;
+  motor1.setSpeed(10);
+  motor1.setPosition(position1);
+  position2 = position2 - 10;
+  motor2.setSpeed(10);
+  motor2.setPosition(position2);
+}
+
 void Move::only_gripping_pos() //夾取位置沒夾取動作
 {
   // position1 = 70;
@@ -416,6 +458,22 @@ void Move::only_grip() //單純夾取動作
   motor7.waitForIdle();
 }
 
+void Move::only_grip_min() //單純小夾取動作
+{
+  position6 = 168;
+  motor6.setServoState(ON);
+  motor6.setSpeed(70);
+  motor6.setPosition(position6);
+  // cout << "motor6 angle:" << position6 << endl;
+
+  // position7 = 152;
+  position7 = 149;
+  motor7.setServoState(ON);
+  motor7.setSpeed(70);
+  motor7.setPosition(position7);
+  motor7.waitForIdle();
+}
+
 void Move::grip_relex() //單純放鬆動作
 {
   position6 = 222;
@@ -425,22 +483,6 @@ void Move::grip_relex() //單純放鬆動作
   // cout << "motor6 angle:" << position6 << endl;
 
   position7 = 92;
-  motor7.setServoState(ON);
-  motor7.setSpeed(70);
-  motor7.setPosition(position7);
-  motor7.waitForIdle();
-}
-
-void Move::only_grip_min() //單純小夾取動作
-{
-  position6 = 172;
-  motor6.setServoState(ON);
-  motor6.setSpeed(70);
-  motor6.setPosition(position6);
-  // cout << "motor6 angle:" << position6 << endl;
-
-  // position7 = 152;
-  position7 = 144;
   motor7.setServoState(ON);
   motor7.setSpeed(70);
   motor7.setPosition(position7);
