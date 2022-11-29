@@ -30,7 +30,7 @@ void Move::setposition() //初始位置
 
   position4 = 156;
   motor4.setServoState(ON);
-  motor4.setSpeed(30);
+  motor4.setSpeed(20);
   motor4.setPosition(position4);
   // motor4.waitForIdle();
   // cout << "motor4 angle:" << position4 << endl;
@@ -38,7 +38,7 @@ void Move::setposition() //初始位置
 
   position3 = 133;
   motor3.setServoState(ON);
-  motor3.setSpeed(30);
+  motor3.setSpeed(20);
   motor3.setPosition(position3);
   motor3.waitForIdle();
   // cout << "motor3 angle:" << position3 << endl;
@@ -46,7 +46,7 @@ void Move::setposition() //初始位置
 
   position2 = 138;
   motor2.setServoState(ON);
-  motor2.setSpeed(30);
+  motor2.setSpeed(20);
   motor2.setPosition(position2);
   // motor2.waitForIdle();
   // cout << "motor2 angle:" << position2 << endl;
@@ -54,7 +54,7 @@ void Move::setposition() //初始位置
 
   position1 = 156;
   motor1.setServoState(ON);
-  motor1.setSpeed(30);
+  motor1.setSpeed(20);
   motor1.setPosition(position1);
   motor1.waitForIdle();
   // cout << "motor1 angle:" << position1 << endl;
