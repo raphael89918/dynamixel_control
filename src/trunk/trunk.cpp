@@ -8,7 +8,7 @@ int main(int argc, char **argv)
     storage.init();
     while (ros::ok())
     {
-        ros::Rate loop_rate(100);
+        ros::Rate loop_rate(1000);
         ros::spinOnce();
         loop_rate.sleep();
     }

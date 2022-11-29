@@ -196,13 +196,13 @@ void Move::gripping() //夾取動作
   motor5.setPosition(position5);
   motor5.waitForIdle();
 */
-  position6 = 187;
+  position6 = 180;
   motor6.setServoState(ON);
   motor6.setSpeed(70);
   motor6.setPosition(position6);
   // cout << "motor6 angle:" << position6 << endl;
 
-  position7 = 132;
+  position7 = 139;
   motor7.setServoState(ON);
   motor7.setSpeed(70);
   motor7.setPosition(position7);
