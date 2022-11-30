@@ -227,21 +227,21 @@ void Move::backtoposition()
 
   position3 = 137;
   motor3.setServoState(ON);
-  motor3.setSpeed(10);
+  motor3.setSpeed(7);
   motor3.setPosition(position3);
   // cout << "motor3 angle:" << position3 << endl;
   //   motor3.setServoState(OFF);
 
   position4 = 161;
   motor4.setServoState(ON);
-  motor4.setSpeed(10);
+  motor4.setSpeed(7);
   motor4.setPosition(position4);
   // cout << "motor4 angle:" << position4 << endl;
   //  motor4.setServoState(OFF);
 
   position5 = 185;
   motor5.setServoState(ON);
-  motor5.setSpeed(10);
+  motor5.setSpeed(5);
   motor5.setPosition(position5);
   // cout << "motor5 angle:" << position5 << endl;
   motor5.waitForIdle();
@@ -491,6 +491,7 @@ void Move::grip_relex() //單純放鬆動作
 
 void Move::type2_gripping_pos() //夾取位置沒夾取動作
 {
+ 
   // position1 = 70;
   position1 = 71;
   motor1.setServoState(ON);
@@ -517,10 +518,10 @@ void Move::type2_gripping_pos() //夾取位置沒夾取動作
   motor4.setServoState(ON);
   motor4.setSpeed(10);
   motor4.setPosition(position4);
-  motor4.waitForIdle();
+  //motor4.waitForIdle();
   // cout << "motor4 angle:" << position4 << endl;
   // motor4.setServoState(OFF);
-
+  
   position5 = 207;
   motor5.setServoState(ON);
   motor5.setSpeed(10);
