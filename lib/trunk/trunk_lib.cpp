@@ -119,6 +119,10 @@ void Storage::trunk_callback(const dynamixel_control::arm_trunk &msg)
     {
         m_move.fir_sec_subposition();
     }
+    if (msg.control == 22) //地1軸夾爪向下轉動
+    {
+        only_pileposition();
+    }
 }
 
 void Storage::startposition()
@@ -235,6 +239,62 @@ void Storage::oriposition()
 }
 
 void Storage::pileposition() //木板積木放置堆疊
+{
+    motor1.setServoState(ON);
+    motor2.setServoState(ON);
+    motor3.setServoState(ON);
+    motor4.setServoState(ON);
+    motor5.setServoState(ON);
+    motor6.setServoState(ON);
+
+    position3 = 240;
+    motor3.setSpeed(10);
+    motor3.setPosition(position3);
+    // cout << "motor3 angle:" << position3 << endl;
+    motor3.waitForIdle();
+
+    position1 = 239;
+    motor1.setSpeed(20);
+    motor1.setPosition(position1);
+    // cout << "motor1 angle:" << position1 << endl;
+
+    position6 = 251;
+    motor6.setSpeed(20);
+    motor6.setPosition(position6);
+    // cout << "motor6 angle:" << position6 << endl;
+
+    position5 = 276;
+    motor5.setSpeed(20);
+    motor5.setPosition(position5);
+    //  cout << "motor5 angle:" << position5 << endl;
+
+    position2 = 60;
+    motor2.setSpeed(20);
+    motor2.setPosition(position2);
+    // cout << "motor2 angle:" << position2 << endl;
+
+
+    ros::Duration(3).sleep();
+    position4 = 59;
+    motor4.setSpeed(40);
+    motor4.setPosition(position4);
+    // cout << "motor4 angle:" << position4 << endl;
+    motor4.waitForIdle();
+
+    ros::Duration(1).sleep();
+    position3 = 160;
+    motor3.setSpeed(10);
+    motor3.setPosition(position3);
+    // cout << "motor3 angle:" << position3 << endl;
+
+    /*   motor1.setServoState(OFF);
+         motor2.setServoState(OFF);
+         motor3.setServoState(OFF);
+         motor4.setServoState(OFF);
+         */
+}
+
+void Storage::only_pileposition() //木板積木放置堆疊
 {
     motor1.setServoState(ON);
     motor2.setServoState(ON);

@@ -18,6 +18,7 @@ public:
     void backrise();
     void backdown();
     void pileposition();
+    void only_pileposition();
     Storage(ros::NodeHandle &nh);
     ~Storage();
 
