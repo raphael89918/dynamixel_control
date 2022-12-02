@@ -303,12 +303,6 @@ void Storage::only_pileposition() //木板積木放置堆疊
     motor5.setServoState(ON);
     motor6.setServoState(ON);
 
-    position3 = 240;
-    motor3.setSpeed(10);
-    motor3.setPosition(position3);
-    // cout << "motor3 angle:" << position3 << endl;
-    motor3.waitForIdle();
-
     position1 = 239;
     motor1.setSpeed(20);
     motor1.setPosition(position1);
